@@ -1,0 +1,67 @@
+﻿@model EmployeeModel;
+
+@{
+
+    ViewData["Title"] = "Home Page";
+    var emp = ViewData["myemp1"] as EmployeeModel;
+    var emp2 = ViewBag.myemp2;
+    var emp3array = ViewData["emp3array"] as List<EmployeeModel>;
+    var emp3array2 = ViewBag.emp3array2;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@* var students = ViewData["students"] as List<StudentModel>; *@
+@* @foreach(var s in students)
+{
+    <p>
+        @s.rollNo
+        @s.name,
+        @s.gender,
+        @s.standard
+    </p>
+} *@
+
+
+@{
+    if(emp !=null)
+    {
+        <h1>EmpId: @emp.EmpId</h1>
+        <h1>EmpName: @emp.EmpName</h1>
+        <h1>Designation: @emp.Designation</h1>
+        <h1>Salary: @emp.Salary</h1>
+    }
+    if (emp2 != null)
+    {
+        <h1>EmpId: @emp2.EmpId</h1>
+        <h1>EmpName: @emp2.EmpName</h1>
+        <h1>Designation: @emp2.Designation</h1>
+        <h1>Salary: @emp2.Salary</h1>
+    }
+    if (emp3array!=null)
+    {
+        <span>| EmpId |</span>
+        <span>  EmpName: |</span>
+        <span>  Designation: |</span>
+        <span>  Salary: |</span>
+        <br />
+        foreach (var e in emp3array2)
+        {
+            <span>| @e.EmpId |</span>
+            <span>@e.EmpName |</span>
+            <span>@e.Designation |</span>
+            <span>@e.Salary |</span>
+            <br />
+        }
+    }
+}
+<div>
+    <h1> @Model.EmpId </h1>
+    <h1> @Model.EmpName </h1>
+    <h1> @Model.Designation </h1>
+    <h1> @Model.Salary </h1>
+</div>
+
