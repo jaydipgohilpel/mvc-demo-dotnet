@@ -16,5 +16,6 @@ namespace mvc_demo.Models
         public string Gender { get; set; }
 
         public int? Age { get; set; }
+        public int? Standard { get; set; }
     }
 }
